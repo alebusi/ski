@@ -70,7 +70,7 @@ function keyup_handler(event) {
 function drawPista() {
     pistaY=pistaY-(velocita-deg);
     document.getElementById("pista").style.top = pistaY+"px";
-    pistaX=pistaX+deg;
+    pistaX=pistaX-deg;
     document.getElementById("pista").style.left = pistaX+"px";
 }
 
