@@ -1,5 +1,20 @@
+// posizione paletti porte
 var x = 0;
 var y = 300;
+var velocita = 90;
+
+// gradi curva e direzione sciatore
+var deg = 0;
+var dir = 0;
+
+pistaX = 0;
+pistaY = 0;
+
+kd = false;
+partenza = false;
+
+window.addEventListener("keydown", keypress_handler, false);
+window.addEventListener("keyup", keyup_handler, false);
 
 function randomIntFromInterval(min,max) {
     return Math.floor(Math.random()*(max-min+1)+min);
@@ -22,3 +37,52 @@ var arrayDiv = new Array();
         document.getElementById("pista").appendChild(arrayDiv[i]);
         //document.body.appendChild(arrayDiv[i]);
     }
+
+function keypress_handler(event) {
+  if (event.keyCode == 37 || event.keyCode == 39) { 
+    if (!this.kd) {
+	this.kd = true;
+        if (event.keyCode == 37) {
+          dir = -6;
+        }
+        if (event.keyCode == 39) {
+          dir = 6;
+        }
+        sterza = setInterval(function() {
+		muoviElementoT(dir);
+		}, 60);
+    }
+  }	
+}
+
+function keyup_handler(event) {
+  if (event.keyCode == 37 || event.keyCode == 39) {
+        this.kd = false;
+	    try {clearInterval(sterza);}
+		catch{}
+  }
+}
+
+function muoviElementoT(direction) {
+    deg+=direction;
+    document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)"; 
+}
+
+function muoviElemento(direction) {
+    muoviElementoT(direction);
+    try {clearInterval(myTimer);}
+		catch(err){}
+    myTimer = setInterval(function() {
+        deg+=direction;
+        document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
+        pistaY=pistaY-(velocita-deg);
+        document.getElementById("pista").style.top = pistaY+"px";
+        pistaX=pistaX+deg;
+        document.getElementById("pista").style.left = pistaX+"px";
+	  }, 60);
+}
+
+function resetInt() {
+    try {clearInterval(myTimer);}
+		catch(err){}
+}
