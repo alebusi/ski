@@ -38,6 +38,10 @@ var arrayDiv = new Array();
         //document.body.appendChild(arrayDiv[i]);
     }
 
+var moveInterval = setInterval(function () {
+    drawPista();
+}, 400);
+
 function keypress_handler(event) {
   if (event.keyCode == 37 || event.keyCode == 39) { 
     if (!this.kd) {
@@ -63,6 +67,13 @@ function keyup_handler(event) {
   }
 }
 
+function drawPista {
+    pistaY=pistaY-(velocita-deg);
+    document.getElementById("pista").style.top = pistaY+"px";
+    pistaX=pistaX+deg;
+    document.getElementById("pista").style.left = pistaX+"px";
+}
+
 function muoviElementoT(direction) {
     deg+=direction;
     document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)"; 
@@ -75,11 +86,7 @@ function muoviElemento(direction) {
     myTimer = setInterval(function() {
         deg+=direction;
         document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
-        pistaY=pistaY-(velocita-deg);
-        document.getElementById("pista").style.top = pistaY+"px";
-        pistaX=pistaX+deg;
-        document.getElementById("pista").style.left = pistaX+"px";
-	  }, 60);
+	}, 60);
 }
 
 function resetInt() {
