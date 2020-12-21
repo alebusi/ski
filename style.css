@@ -15,7 +15,7 @@ html, body {
     animation-timing-function: linear;
 }
 
-@keyframes mymove_circle {
+@keyframes mymove_ski {
   0%   {top: 0px;}
   100% {top: -7000px;}
 }
