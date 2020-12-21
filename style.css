@@ -11,6 +11,13 @@ html, body {
 #pista {
     width: 100vw;
     height: 800vh;
+    animation: mymove_ski 8s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes mymove_circle {
+  0%   {top: 0px;}
+  100% {top: -7000px;}
 }
 
 .gigante {
