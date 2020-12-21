@@ -11,7 +11,7 @@ html, body {
 #pista {
     width: 100vw;
     height: 800vh;
-    animation: mymove_ski 8s infinite;
+    animation: mymove_ski 16s infinite;
     animation-timing-function: linear;
 }
 
