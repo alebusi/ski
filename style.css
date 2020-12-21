@@ -12,6 +12,7 @@ html, body {
     width: 100vw;
     height: 800vh;
     position: absolute;
+    background-color: orange;
     /*
     animation: mymove_ski 16s infinite;
     animation-timing-function: linear;
@@ -49,14 +50,14 @@ html, body {
 
 .sinistra {
     position: fixed;
-    width: 50vw;
+    width: 20vw;
     height: 99vh;
     touch-action: none;
 }
 
 .destra {
     position: fixed;
-    width: 50vw;
+    width: 20vw;
     height: 99vh;
     left: 50vw;
     touch-action: none;
