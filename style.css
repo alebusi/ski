@@ -16,6 +16,7 @@ html, body {
 .gigante {
     width: 60px;
     height: 60px;
+    position: absolute;
     border-top: 50px solid #ff3300;
     border-left: 8px solid #ff3300;
     border-right: 8px solid #ff3300;
