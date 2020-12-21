@@ -29,6 +29,19 @@ html, body {
     border-right: 8px solid #ff3300;
  }   
 
+#sciatore {
+    width: 40px;
+    height: 100px;
+    border-left: 12px solid black;
+    border-right: 12px solid black;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    position: absolute;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 .sinistra {
     position: fixed;
     width: 50vw;
