@@ -39,7 +39,7 @@ var arrayDiv = new Array();
 
 var moveInterval = setInterval(function () {
     drawPista();
-}, 40);
+}, 100);
 
 function keypress_handler(event) {
   if (event.keyCode == 37 || event.keyCode == 39) { 
