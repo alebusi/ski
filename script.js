@@ -6,6 +6,7 @@ var velocita = 90;
 // gradi curva e direzione sciatore
 var deg = 0;
 var dir = 0;
+var sterzata = 6;
 
 pistaX = 0;
 pistaY = 0;
@@ -46,11 +47,11 @@ function keypress_handler(event) {
   if (event.keyCode == 37 || event.keyCode == 39) { 
     if (!this.kd) {
 	this.kd = true;
-        if (event.keyCode == 37) {
-          dir = -6;
+        if (event.keyCode == 37 && dir > -sterzata*4) {
+          dir = -sterzata;
         }
-        if (event.keyCode == 39) {
-          dir = 6;
+        if (event.keyCode == 39 && dir < sterzata*4) {
+          dir = sterzata;
         }
         sterza = setInterval(function() {
 		muoviElementoT(dir);
@@ -80,13 +81,16 @@ function muoviElementoT(direction) {
 }
 
 function muoviElemento(direction) {
-    muoviElementoT(direction);
-    try {clearInterval(myTimer);}
+    if (deg > -sterzata*4 && deg < sterzata*4) {
+      direction=direction*sterzata;
+      muoviElementoT(direction);
+      try {clearInterval(myTimer);}
 		catch(err){}
-    myTimer = setInterval(function() {
-        deg+=direction;
-        document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
-	}, 60);
+      myTimer = setInterval(function() {
+         deg+=direction;
+         document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
+	 }, 60);
+    }
 }
 
 function resetInt() {
