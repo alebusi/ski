@@ -12,7 +12,6 @@ pistaX = 0;
 pistaY = 0;
 
 kd = false;
-partenza = false;
 
 window.addEventListener("keydown", keypress_handler, false);
 window.addEventListener("keyup", keyup_handler, false);
