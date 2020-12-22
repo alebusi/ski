@@ -21,7 +21,7 @@ function partenza() {
 	catch{}
     var start = setInterval(function () {
       drawPista();
-    }, 100);
+    }, 200);
 }
 
 function randomIntFromInterval(min,max) {
@@ -70,7 +70,7 @@ function keyup_handler(event) {
 }
 
 function drawPista() {
-    pistaY=pistaY-Math.round((velocita-deg)/20);
+    pistaY=pistaY-Math.round((velocita-deg));
     document.getElementById("pista").style.top = pistaY+"px";
     pistaX=pistaX-deg;
     document.getElementById("pista").style.left = pistaX+"px";
