@@ -17,6 +17,14 @@ partenza = false;
 window.addEventListener("keydown", keypress_handler, false);
 window.addEventListener("keyup", keyup_handler, false);
 
+function partenza() {
+    try {clearInterval(start);}
+	catch{}
+    var start = setInterval(function () {
+      drawPista();
+    }, 100);
+}
+
 function randomIntFromInterval(min,max) {
     return Math.floor(Math.random()*(max-min+1)+min);
 }
@@ -36,14 +44,6 @@ var arrayDiv = new Array();
         arrayDiv[i].style.left = x+"vw";
         document.getElementById("pista").appendChild(arrayDiv[i]);
     }
-
-function partenza() {
-    try {clearInterval(start);}
-	catch{}
-    var start = setInterval(function () {
-      drawPista();
-    }, 100);
-}
 
 function keypress_handler(event) {
   if (event.keyCode == 37 || event.keyCode == 39) { 
