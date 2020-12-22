@@ -10,10 +10,10 @@ html, body {
 
 #partenza {
     position: fixed;
-    width: 25vw;
-    height: 30vh;
+    width: 20vw;
+    height: 20vh;
     top: 0vh;
-    left: 75vw;
+    left: 80vw;
 }
 
 #partenza:hover {
