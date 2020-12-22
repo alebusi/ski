@@ -8,6 +8,13 @@ html, body {
     user-select: none; /* Standard syntax */
 }
 
+#partenza {
+    position: fixed;
+    width: 25vw;
+    height: 30vh;
+    left: 75vw;
+}
+
 #pista {
     width: 100vw;
     height: 800vh;
