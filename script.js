@@ -76,7 +76,7 @@ function drawPista() {
 }
 
 function muoviElementoT(direction) {
-    if (deg > -direction*4 && deg < direction*4) {
+    if (deg+direction > -direction*5 && deg+direction < direction*5) {
       deg+=direction;
       document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
     }
@@ -88,7 +88,7 @@ function muoviElemento(direction) {
     try {clearInterval(myTimer);}
 		catch(err){}
     myTimer = setInterval(function() {
-        if (deg > -sterzata*4 && deg < sterzata*4) {
+        if (deg+direction > -sterzata*5 && deg+direction < sterzata*5) {
            deg+=direction;
            document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
 	}
