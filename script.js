@@ -47,15 +47,15 @@ function keypress_handler(event) {
   if (event.keyCode == 37 || event.keyCode == 39) { 
     if (!this.kd) {
 	this.kd = true;
-        if (event.keyCode == 37 && dir > -sterzata*4) {
+        if (event.keyCode == 37) {
           dir = -sterzata;
         }
-        if (event.keyCode == 39 && dir < sterzata*4) {
+        if (event.keyCode == 39) {
           dir = sterzata;
         }
         sterza = setInterval(function() {
-		muoviElementoT(dir);
-		}, 60);
+	       	muoviElementoT(dir);
+	}, 60);
     }
   }	
 }
@@ -76,21 +76,23 @@ function drawPista() {
 }
 
 function muoviElementoT(direction) {
-    deg+=direction;
-    document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)"; 
+    if (deg > -direction*4 && deg < direction*4) {
+      deg+=direction;
+      document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
+    }
 }
 
 function muoviElemento(direction) {
-    if (deg > -sterzata*4 && deg < sterzata*4) {
-      direction=direction*sterzata;
-      muoviElementoT(direction);
-      try {clearInterval(myTimer);}
+    direction=direction*sterzata;
+    muoviElementoT(direction);
+    try {clearInterval(myTimer);}
 		catch(err){}
-      myTimer = setInterval(function() {
-         deg+=direction;
-         document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
-	 }, 60);
-    }
+    myTimer = setInterval(function() {
+        if (deg > -sterzata*4 && deg < sterzata*4) {
+           deg+=direction;
+           document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
+	}
+    }, 60);
 }
 
 function resetInt() {
