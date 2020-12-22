@@ -76,7 +76,7 @@ function drawPista() {
 }
 
 function muoviElementoT(direction) {
-    if (deg+direction >= -direction*5 && deg+direction <= direction*5) {
+    if (math.abs(deg+direction) <= math.abs(direction)*5) {
       deg+=direction;
       document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
     }
