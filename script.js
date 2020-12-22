@@ -17,6 +17,14 @@ window.addEventListener("keydown", keypress_handler, false);
 window.addEventListener("keyup", keyup_handler, false);
 
 function partenza() {
+    var deg = 0;
+    var dir = 0;
+    pistaX = 0;
+    pistaY = 0;
+    kd = false;
+    document.getElementById("pista").style.top = pistaY+"px";
+    document.getElementById("pista").style.left = pistaX+"px";
+	
     try {clearInterval(start);}
 	catch{}
     var start = setInterval(function () {
