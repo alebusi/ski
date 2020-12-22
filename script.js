@@ -39,7 +39,7 @@ var arrayDiv = new Array();
 
 var moveInterval = setInterval(function () {
     drawPista();
-}, 400);
+}, 40);
 
 function keypress_handler(event) {
   if (event.keyCode == 37 || event.keyCode == 39) { 
@@ -67,7 +67,7 @@ function keyup_handler(event) {
 }
 
 function drawPista() {
-    pistaY=pistaY-(velocita-deg);
+    pistaY=pistaY-Math.round(velocita-deg)/10);
     document.getElementById("pista").style.top = pistaY+"px";
     pistaX=pistaX-deg;
     document.getElementById("pista").style.left = pistaX+"px";
