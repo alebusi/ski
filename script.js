@@ -34,9 +34,7 @@ var arrayDiv = new Array();
             x=randomIntFromInterval(20, 50);
         }            
         arrayDiv[i].style.left = x+"vw";
-        //alert("passo "+arrayDiv[i].id);
         document.getElementById("pista").appendChild(arrayDiv[i]);
-        //document.body.appendChild(arrayDiv[i]);
     }
 
 var moveInterval = setInterval(function () {
@@ -76,7 +74,7 @@ function drawPista() {
 }
 
 function muoviElementoT(direction) {
-    if (math.abs(deg+direction) <= math.abs(direction)*5) {
+    if (Math.abs(deg+direction) <= Math.abs(direction)*5) {
       deg+=direction;
       document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
     }
