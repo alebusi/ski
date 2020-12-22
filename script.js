@@ -37,9 +37,13 @@ var arrayDiv = new Array();
         document.getElementById("pista").appendChild(arrayDiv[i]);
     }
 
-var moveInterval = setInterval(function () {
-    drawPista();
-}, 100);
+function partenza() {
+    try {clearInterval(start);}
+	catch{}
+    var start = setInterval(function () {
+      drawPista();
+    }, 100);
+}
 
 function keypress_handler(event) {
   if (event.keyCode == 37 || event.keyCode == 39) { 
@@ -67,7 +71,7 @@ function keyup_handler(event) {
 }
 
 function drawPista() {
-    pistaY=pistaY-Math.round((velocita-deg)/10);
+    pistaY=pistaY-Math.round((velocita-deg)/20);
     document.getElementById("pista").style.top = pistaY+"px";
     pistaX=pistaX-deg;
     document.getElementById("pista").style.left = pistaX+"px";
