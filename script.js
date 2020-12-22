@@ -86,7 +86,7 @@ function muoviElemento(direction) {
     try {clearInterval(myTimer);}
 		catch(err){}
     myTimer = setInterval(function() {
-        if (deg+direction >= -sterzata*5 && deg+direction <= sterzata*5) {
+        if (Math.abs(deg+direction) <= Math.abs(direction)*5) {
            deg+=direction;
            document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
 	}
