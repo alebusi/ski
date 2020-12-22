@@ -12,7 +12,17 @@ html, body {
     position: fixed;
     width: 25vw;
     height: 30vh;
+    top: 0vh;
     left: 75vw;
+}
+
+#partenza:hover {
+  animation: mymoveSelection 1s;
+}
+
+@keyframes mymoveSelection {
+  0%   {background-color: white;}
+  100% {background-color: black;}
 }
 
 #pista {
