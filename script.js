@@ -83,6 +83,10 @@ function drawPista() {
     document.getElementById("pista").style.top = pistaY+"px";
     pistaX=pistaX-deg;
     document.getElementById("pista").style.left = pistaX+"px";
+    if (Math.abs(pistaY) > 6400) {
+	try {clearInterval(start_game);}
+	catch{}
+    }
 }
 
 function muoviElementoT(direction) {
