@@ -85,7 +85,7 @@ function drawPista() {
     document.getElementById("pista").style.left = pistaX+"px";
     if (Math.abs(pistaY) > 6400) {
 	try {clearInterval(startGame);}
-	catch(err){}
+	catch(err){alert("Errore : "+err);}
     }
 }
 
