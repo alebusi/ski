@@ -25,9 +25,9 @@ function partenza() {
     document.getElementById("pista").style.top = pistaY+"px";
     document.getElementById("pista").style.left = pistaX+"px";
 	
-    try {clearInterval(start_game);}
+    try {clearInterval(startGame);}
 	catch{}
-    var start_game = setInterval(function () {
+    var startGame = setInterval(function () {
       drawPista();
     }, 200);
 }
@@ -84,7 +84,7 @@ function drawPista() {
     pistaX=pistaX-deg;
     document.getElementById("pista").style.left = pistaX+"px";
     if (Math.abs(pistaY) > 6400) {
-	try {clearInterval(start_game);}
+	try {clearInterval(startGame);}
 	catch(err){}
     }
 }
