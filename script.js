@@ -1,7 +1,7 @@
 // posizione paletti porte
 var x = 0;
 var y = 300;
-var velocita = 40;
+var velocita = 80;
 
 // gradi curva e direzione sciatore
 var deg = 0;
@@ -36,6 +36,7 @@ function randomIntFromInterval(min,max) {
     return Math.floor(Math.random()*(max-min+1)+min);
 }
 
+// Disegna pista
 var arrayDiv = new Array();
     for(var i=0; i <= 20; i++){
         arrayDiv[i] = document.createElement('div');
@@ -78,7 +79,7 @@ function keyup_handler(event) {
 }
 
 function drawPista() {
-    pistaY=pistaY-Math.round((velocita-deg));
+    pistaY=pistaY-Math.round(velocita-Math.abs(deg));
     document.getElementById("pista").style.top = pistaY+"px";
     pistaX=pistaX-deg;
     document.getElementById("pista").style.left = pistaX+"px";
