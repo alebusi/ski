@@ -28,7 +28,7 @@ function partenza() {
     document.getElementById("pista").style.left = pistaX+"px";
 	
     try {clearInterval(startGame);}
-    catch(){}
+    catch(err){alert("Errore : "+err);}
     var startGame = setInterval(function () {
       drawPista();
     }, 40);
