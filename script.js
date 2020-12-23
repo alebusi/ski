@@ -29,7 +29,7 @@ function partenza() {
 	catch{}
     var start = setInterval(function () {
       drawPista();
-    }, 200);
+    }, 100);
 }
 
 function randomIntFromInterval(min,max) {
