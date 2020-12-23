@@ -30,6 +30,17 @@ function partenza() {
     var startGame = setInterval(function () {
       drawPista();
     }, 200);
+	
+    function drawPista() {
+      pistaY=pistaY-Math.round(velocita-Math.abs(deg));
+      document.getElementById("pista").style.top = pistaY+"px";
+      pistaX=pistaX-deg;
+      document.getElementById("pista").style.left = pistaX+"px";
+      if (Math.abs(pistaY) > 6400) {
+       	try {clearInterval(startGame);}
+	catch(err){alert("Errore : "+err);}
+      }
+    }
 }
 
 function randomIntFromInterval(min,max) {
@@ -76,17 +87,6 @@ function keyup_handler(event) {
 	    try {clearInterval(sterza);}
 		catch{}
   }
-}
-
-function drawPista() {
-    pistaY=pistaY-Math.round(velocita-Math.abs(deg));
-    document.getElementById("pista").style.top = pistaY+"px";
-    pistaX=pistaX-deg;
-    document.getElementById("pista").style.left = pistaX+"px";
-    if (Math.abs(pistaY) > 6400) {
-	try {clearInterval(startGame);}
-	catch(err){alert("Errore : "+err);}
-    }
 }
 
 function muoviElementoT(direction) {
