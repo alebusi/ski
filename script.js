@@ -1,13 +1,15 @@
 // posizione paletti porte
 var x = 0;
 var y = 300;
-var velocita = 80;
+var velocita = 90;
 
 // gradi curva e direzione sciatore
 var deg = 0;
 var dir = 0;
 var sterzata = 6;
+var max_sterzata = 42;
 
+// griglia pista
 pistaX = 0;
 pistaY = 0;
 
@@ -29,16 +31,20 @@ function partenza() {
 	catch{}
     var startGame = setInterval(function () {
       drawPista();
-    }, 200);
+    }, 40);
 	
     function drawPista() {
-      pistaY=pistaY-Math.round(velocita-Math.abs(deg));
+      pistaY=pistaY-Math.round(velocita-Math.abs(deg)/10);
       document.getElementById("pista").style.top = pistaY+"px";
       pistaX=pistaX-deg;
       document.getElementById("pista").style.left = pistaX+"px";
-      if (Math.abs(pistaY) > 6400) {
+      if (Math.abs(pistaY) > 6300) {
+	pistaX = 0;
+        pistaY = 800;      
+	/*      
        	try {clearInterval(startGame);}
 	catch(err){alert("Errore : "+err);}
+	*/
       }
     }
 }
@@ -90,7 +96,7 @@ function keyup_handler(event) {
 }
 
 function muoviElementoT(direction) {
-    if (Math.abs(deg+direction) <= Math.abs(direction)*5) {
+    if (Math.abs(deg+direction) <= max_sterzata) {
       deg+=direction;
       document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
     }
@@ -102,7 +108,7 @@ function muoviElemento(direction) {
     try {clearInterval(myTimer);}
 		catch(err){}
     myTimer = setInterval(function() {
-        if (Math.abs(deg+direction) <= Math.abs(direction)*5) {
+        if (Math.abs(deg+direction) <= max_sterzata) {
            deg+=direction;
            document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
 	}
