@@ -34,7 +34,9 @@ function partenza() {
     }, 40);
 	
     function drawPista() {
-      pistaY=pistaY-Math.round((velocita-Math.abs(deg))/10);
+      //pistaY=pistaY-Math.round((velocita-Math.abs(deg))/10);
+      spostamento=(velocita/10)-(Math.abs(deg)/10);
+      pistaY=pistaY-Math.round(spostamento);
       document.getElementById("pista").style.top = pistaY+"px";
       pistaX=pistaX-deg;
       document.getElementById("pista").style.left = pistaX+"px";
