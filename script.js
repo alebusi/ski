@@ -42,7 +42,7 @@ function partenza() {
       document.getElementById("pista").style.left = pistaX+"px";
       if (Math.abs(pistaY) > 6300) {
         pistaX = 0;
-        pistaY = 800;      
+        pistaY = 600;      
 	/*      
        	try {clearInterval(startGame);}
 	catch(err){alert("Errore : "+err);}
