@@ -119,5 +119,5 @@ function muoviElemento(direction) {
 
 function resetInt() {
     try {clearInterval(myTimer);}
-		catch(err){}
+		catch(err){alert("Errore : "+err);}
 }
