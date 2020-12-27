@@ -19,6 +19,8 @@ window.addEventListener("keydown", keypress_handler, false);
 window.addEventListener("keyup", keyup_handler, false);
 
 function partenza() {
+    try {clearInterval(startGame);}
+    catch(err){alert("Errore : "+err);}
     deg = 0;
     dir = 0;
     pistaX = 0;
@@ -44,8 +46,6 @@ function partenza() {
       }
     }
 
-    try {clearInterval(startGame);}
-    catch(err){alert("Errore : "+err);}
     var startGame = setInterval(function () {
       drawPista();
     }, 40);	
