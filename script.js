@@ -18,6 +18,19 @@ kd = false;
 window.addEventListener("keydown", keypress_handler, false);
 window.addEventListener("keyup", keyup_handler, false);
 
+function drawPista() {
+      //pistaY=pistaY-Math.round((velocita-Math.abs(deg))/10);
+      spostamento=(velocita/10)-(Math.abs(deg)/10);
+      pistaY=pistaY-Math.round(spostamento);
+      document.getElementById("pista").style.top = pistaY+"px";
+      pistaX=pistaX-deg;
+      document.getElementById("pista").style.left = pistaX+"px";
+      if (Math.abs(pistaY) > 6300) {
+        pistaX = 0;
+        pistaY = 600;      
+      }
+}
+
 function partenza() {
     try {clearInterval(startGame);}
     catch(err){alert("Errore : "+err);}
@@ -29,23 +42,6 @@ function partenza() {
     document.getElementById("pista").style.top = pistaY+"px";
     document.getElementById("pista").style.left = pistaX+"px";
 	
-    function drawPista() {
-      //pistaY=pistaY-Math.round((velocita-Math.abs(deg))/10);
-      spostamento=(velocita/10)-(Math.abs(deg)/10);
-      pistaY=pistaY-Math.round(spostamento);
-      document.getElementById("pista").style.top = pistaY+"px";
-      pistaX=pistaX-deg;
-      document.getElementById("pista").style.left = pistaX+"px";
-      if (Math.abs(pistaY) > 6300) {
-        pistaX = 0;
-        pistaY = 600;      
-	/*      
-       	try {clearInterval(startGame);}
-	catch(err){alert("Errore : "+err);}
-	*/
-      }
-    }
-
     var startGame = setInterval(function () {
       drawPista();
     }, 40);	
