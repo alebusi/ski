@@ -27,12 +27,6 @@ function partenza() {
     document.getElementById("pista").style.top = pistaY+"px";
     document.getElementById("pista").style.left = pistaX+"px";
 	
-    try {clearInterval(startGame);}
-    catch(err){alert("Errore : "+err);}
-    var startGame = setInterval(function () {
-      drawPista();
-    }, 40);
-	
     function drawPista() {
       //pistaY=pistaY-Math.round((velocita-Math.abs(deg))/10);
       spostamento=(velocita/10)-(Math.abs(deg)/10);
@@ -49,6 +43,12 @@ function partenza() {
 	*/
       }
     }
+
+    try {clearInterval(startGame);}
+    catch(err){alert("Errore : "+err);}
+    var startGame = setInterval(function () {
+      drawPista();
+    }, 40);	
 }
 
 function randomIntFromInterval(min,max) {
