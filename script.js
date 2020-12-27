@@ -33,8 +33,8 @@ function drawPista() {
 }
 
 function partenza() {
-    try {clearInterval(startGameId);}
-    catch(err){alert("Errore : "+err);}
+    clearInterval(startGameId);
+    //catch(err){alert("Errore : "+err);}
     deg = 0;
     dir = 0;
     pistaX = 0;
