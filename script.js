@@ -14,6 +14,7 @@ pistaX = 0;
 pistaY = 0;
 
 kd = false;
+var startGameId;
 
 window.addEventListener("keydown", keypress_handler, false);
 window.addEventListener("keyup", keyup_handler, false);
@@ -32,7 +33,7 @@ function drawPista() {
 }
 
 function partenza() {
-    try {clearInterval(startGame);}
+    try {clearInterval(startGameId);}
     catch(err){alert("Errore : "+err);}
     deg = 0;
     dir = 0;
@@ -42,7 +43,7 @@ function partenza() {
     document.getElementById("pista").style.top = pistaY+"px";
     document.getElementById("pista").style.left = pistaX+"px";
 	
-    var startGame = setInterval(function () {
+    var startGameId = setInterval(function () {
       drawPista();
     }, 40);	
 }
