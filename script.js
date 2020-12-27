@@ -43,7 +43,7 @@ function partenza() {
     document.getElementById("pista").style.top = pistaY+"px";
     document.getElementById("pista").style.left = pistaX+"px";
 	
-    var startGameId = setInterval(function () {
+    startGameId = setInterval(function () {
       drawPista();
     }, 40);	
 }
