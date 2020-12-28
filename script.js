@@ -6,7 +6,7 @@ var velocita = 90;
 // gradi curva e direzione sciatore
 var deg = 0;
 var dir = 0;
-var sterzata = 3;
+var sterzata = 6;
 var max_sterzata = 42;
 
 // griglia pista
