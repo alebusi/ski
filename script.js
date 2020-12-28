@@ -19,35 +19,6 @@ var startGameId;
 window.addEventListener("keydown", keypress_handler, false);
 window.addEventListener("keyup", keyup_handler, false);
 
-function drawPista() {
-      //pistaY=pistaY-Math.round((velocita-Math.abs(deg))/10);
-      spostamento=(velocita/10)-(Math.abs(deg)/10);
-      pistaY=pistaY-Math.round(spostamento);
-      document.getElementById("pista").style.top = pistaY+"px";
-      pistaX=pistaX-deg;
-      document.getElementById("pista").style.left = pistaX+"px";
-      if (Math.abs(pistaY) > 6300) {
-        pistaX = 0;
-        pistaY = 600;      
-      }
-}
-
-function partenza() {
-    clearInterval(startGameId);
-    //catch(err){alert("Errore : "+err);}
-    deg = 0;
-    dir = 0;
-    pistaX = 0;
-    pistaY = 0;
-    kd = false;
-    document.getElementById("pista").style.top = pistaY+"px";
-    document.getElementById("pista").style.left = pistaX+"px";
-	
-    startGameId = setInterval(function () {
-      drawPista();
-    }, 40);	
-}
-
 function randomIntFromInterval(min,max) {
     return Math.floor(Math.random()*(max-min+1)+min);
 }
@@ -68,6 +39,35 @@ var arrayDiv = new Array();
         arrayDiv[i].style.left = x+"vw";
         document.getElementById("pista").appendChild(arrayDiv[i]);
     }
+
+function partenza() {
+    clearInterval(startGameId);
+    //catch(err){alert("Errore : "+err);}
+    deg = 0;
+    dir = 0;
+    pistaX = 0;
+    pistaY = 0;
+    kd = false;
+    document.getElementById("pista").style.top = pistaY+"px";
+    document.getElementById("pista").style.left = pistaX+"px";
+	
+    startGameId = setInterval(function () {
+      drawPista();
+    }, 40);	
+}
+
+function drawPista() {
+      //pistaY=pistaY-Math.round((velocita-Math.abs(deg))/10);
+      spostamento=(velocita/10)-(Math.abs(deg)/10);
+      pistaY=pistaY-Math.round(spostamento);
+      document.getElementById("pista").style.top = pistaY+"px";
+      pistaX=pistaX-deg;
+      document.getElementById("pista").style.left = pistaX+"px";
+      if (Math.abs(pistaY) > 6300) {
+        pistaX = 0;
+        pistaY = 600;      
+      }
+}
 
 function keypress_handler(event) {
   if (event.keyCode == 37 || event.keyCode == 39) { 
