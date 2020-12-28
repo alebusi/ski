@@ -60,10 +60,10 @@ var arrayDiv = new Array();
         arrayDiv[i].className = 'gigante';
         arrayDiv[i].style.top = y*(i+1)+"px";
         if (x < 50) {
-            x=randomIntFromInterval(51, 70);
+            x=randomIntFromInterval(51, 80);
         }
         else {
-            x=randomIntFromInterval(30, 50);
+            x=randomIntFromInterval(20, 50);
         }            
         arrayDiv[i].style.left = x+"vw";
         document.getElementById("pista").appendChild(arrayDiv[i]);
