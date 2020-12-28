@@ -1,6 +1,6 @@
 // posizione paletti porte
 var x = 0;
-var y = 300;
+var y = 400;
 var velocita = 90;
 
 // gradi curva e direzione sciatore
