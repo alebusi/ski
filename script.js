@@ -61,7 +61,7 @@ function drawPista() {
       spostamento=(velocita/10)-(Math.abs(deg)/10);
       pistaY=pistaY-Math.round(spostamento);
       document.getElementById("pista").style.top = pistaY+"px";
-      pistaX=pistaX-(deg/10);
+      pistaX=pistaX-(deg/5);
       document.getElementById("pista").style.left = pistaX+"px";
       if (Math.abs(pistaY) > 6300) {
         pistaX = 0;
