@@ -15,6 +15,7 @@ pistaY = 0;
 
 kd = false;
 var startGameId;
+var myTimer;
 
 window.addEventListener("keydown", keypress_handler, false);
 window.addEventListener("keyup", keyup_handler, false);
