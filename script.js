@@ -19,7 +19,7 @@ var myTimer;
 
 window.addEventListener("keydown", keypress_handler, false);
 window.addEventListener("keyup", keyup_handler, false);
-$(document).on('touchmove', false);
+//$(document).on('touchmove', false);
 
 function randomIntFromInterval(min,max) {
     return Math.floor(Math.random()*(max-min+1)+min);
