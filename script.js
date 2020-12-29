@@ -99,7 +99,7 @@ function keyup_handler(event) {
 function muoviElementoT(direction) {
     if (Math.abs(deg+direction) <= max_sterzata) {
       deg+=direction;
-      document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
+      document.getElementById("sciatore").style.transform = "translate(-50%, -50%) rotate("+deg+"deg)";
     }
 }
 
@@ -111,7 +111,7 @@ function muoviElemento(direction) {
     myTimer = setInterval(function() {
         if (Math.abs(deg+direction) <= max_sterzata) {
            deg+=direction;
-           document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
+           document.getElementById("sciatore").style.transform = "translate(-50%, -50%) rotate("+deg+"deg)";
 	}
     }, 60);
 }
