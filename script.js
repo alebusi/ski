@@ -105,15 +105,16 @@ function muoviElementoT(direction) {
 }
 
 function muoviElemento(direction) {
-    direction=direction*sterzata;
+    dir=direction*sterzata;
     //muoviElementoT(direction);
-    try {clearInterval(myTimer);}
-		catch(err){}
+    /*try {clearInterval(myTimer);}
+		catch(err){}*/
     myTimer = setInterval(function() {
-        if (Math.abs(deg+direction) <= max_sterzata) {
+	muoviElementoT(dir);
+     /*   if (Math.abs(deg+direction) <= max_sterzata) {
            deg+=direction;
            document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
-	}
+	} */
     }, 60);
 }
 
