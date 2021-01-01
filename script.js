@@ -66,7 +66,7 @@ function drawPista() {
       pistaX=pistaX-(deg/6);
       document.getElementById("pista").style.left = pistaX+"px";
       //w.document.writeln("pistaX:"+px);
-      if (Math.abs(pistaY) > 6300) {
+      if (Math.abs(pistaY) > 8000) {
         pistaX = 0;
         pistaY = 600;      
       }
