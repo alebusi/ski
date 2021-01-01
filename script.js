@@ -55,7 +55,7 @@ function partenza() {
 	
     startGameId = setInterval(function () {
       drawPista();
-    }, 40);	
+    }, 60);	
 }
 
 function drawPista() {
@@ -65,6 +65,7 @@ function drawPista() {
       document.getElementById("pista").style.top = pistaY+"px";
       pistaX=pistaX-(deg/6);
       document.getElementById("pista").style.left = pistaX+"px";
+      //w.document.writeln("pistaX:"+px);
       if (Math.abs(pistaY) > 6300) {
         pistaX = 0;
         pistaY = 600;      
@@ -99,7 +100,7 @@ function keyup_handler(event) {
 function muoviElementoT(direction) {
     if (Math.abs(deg+direction) <= max_sterzata) {
       deg+=direction;
-      document.getElementById("sciatore").style.transform = "translate(-50%, -50%) rotate("+deg+"deg)";
+      document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
     }
 }
 
@@ -111,7 +112,7 @@ function muoviElemento(direction) {
     myTimer = setInterval(function() {
         if (Math.abs(deg+direction) <= max_sterzata) {
            deg+=direction;
-           document.getElementById("sciatore").style.transform = "translate(-50%, -50%) rotate("+deg+"deg)";
+           document.getElementById("sciatore").style.transform = "translate(-50%, -50%) skew("+deg+"deg)";
 	}
     }, 60);
 }
