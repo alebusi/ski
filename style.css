@@ -71,6 +71,7 @@ html, body {
     width: 40vw;
     height: 99vh;
     touch-action: none;
+    border: 2px solid black;
 }
 
 .destra {
@@ -79,4 +80,5 @@ html, body {
     height: 99vh;
     left: 60vw;
     touch-action: none;
+    border: 2px solid black;
 }
