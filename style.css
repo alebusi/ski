@@ -16,6 +16,13 @@ html, body {
     left: 80vw;
 }
 
+#velocita {
+    position: fixed;
+    width: 20vw;
+    height: 20vh;
+    top: 0vh;
+}
+
 #partenza:hover {
   animation: mymoveSelection 1s;
 }
