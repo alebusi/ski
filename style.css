@@ -30,7 +30,7 @@ html, body {
     height: 800vh;
     position: absolute;
     background-color: white;
-    border: 2px solid blue;
+    /*border: 2px solid blue;*/
     /*
     animation: mymove_ski 16s infinite;
     animation-timing-function: linear;
