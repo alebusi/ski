@@ -108,8 +108,8 @@ function muoviElementoT(direction) {
 function muoviElemento(direction) {
     dir=direction*sterzata;
     //muoviElementoT(direction);
-    /*try {clearInterval(myTimer);}
-		catch(err){}*/
+    try {clearInterval(myTimer);}
+		catch(err){}
     myTimer = setInterval(function() {
 	muoviElementoT(dir);
      /*   if (Math.abs(deg+direction) <= max_sterzata) {
