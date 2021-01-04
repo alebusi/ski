@@ -55,7 +55,7 @@ function partenza() {
 	
     startGameId = setInterval(function () {
       drawPista();
-    }, 500);	
+    }, 60);	
 }
 
 function drawPista() {
