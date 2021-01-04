@@ -68,7 +68,7 @@ function drawPista() {
       document.getElementById("velocita").innerHTML = "pistaY: "+Math.round(spostamento)+" pistaX: "+Math.round(deg/3);
       //alert("pistaY: "+pistaY+" pistaX: "+pistaX);
       //w.document.writeln("pistaX:"+px);
-      if (Math.abs(pistaY) > 8000) {
+      if (Math.abs(pistaY) > 8400) {
         pistaX = 0;
         pistaY = 600;      
       }
