@@ -63,7 +63,7 @@ function drawPista() {
       spostamento=(velocita/10)-(Math.abs(deg)/18);
       pistaY=pistaY-Math.round(spostamento);
       document.getElementById("pista").style.top = pistaY+"px";
-      pistaX=pistaX-(deg/6);
+      pistaX=pistaX-(deg/3);
       document.getElementById("pista").style.left = pistaX+"px";
       //alert("pistaY: "+pistaY+" pistaX: "+pistaX);
       //w.document.writeln("pistaX:"+px);
