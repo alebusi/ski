@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    width: 200vw;
     overflow: hidden;
     background-color: green;
     -webkit-user-select: none; /* Safari */
