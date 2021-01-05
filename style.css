@@ -3,6 +3,7 @@ html, body {
     padding: 0;
     width: 200vw;
     overflow: hidden;
+    background-color: #80ffff;
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10+ and Edge */
     user-select: none; /* Standard syntax */
@@ -32,16 +33,14 @@ html, body {
   100% {background-color: black;}
 }
 
-#pista {
+#pista, #neve {
     width: 100vw;
     height: 800vh;
     position: absolute;
+}
+
+#neve {
     background-color: white;
-    /*border: 2px solid blue;*/
-    /*
-    animation: mymove_ski 16s infinite;
-    animation-timing-function: linear;
-    */
 }
 
 /*
@@ -61,10 +60,10 @@ html, body {
  }   
 
 #sciatore {
-    width: 40px;
-    height: 100px;
-    border-left: 12px solid black;
-    border-right: 12px solid black;
+    width: 30px;
+    height: 80px;
+    border-left: 14px solid black;
+    border-right: 14px solid black;
     position: absolute;
     top: 10%;
     left: 50%;
