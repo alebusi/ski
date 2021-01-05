@@ -73,8 +73,8 @@ function drawPista() {
       //alert("pistaY: "+pistaY+" pistaX: "+pistaX);
       //w.document.writeln("pistaX:"+px);
       if (Math.abs(pistaY) > 8400) {
-        pistaX = 0;
-        pistaY = 600;      
+        //pistaX = 0;
+        pistaY = 400;      
       }
 }
 
