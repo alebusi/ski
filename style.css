@@ -43,13 +43,6 @@ html, body {
     background-color: white;
 }
 
-/*
-@keyframes mymove_ski {
-  0%   {top: 0px;}
-  100% {top: -7000px;}
-}
-*/
-
 .gigante {
     width: 60px;
     height: 60px;
@@ -67,7 +60,6 @@ html, body {
     position: absolute;
     top: 10%;
     left: 50%;
-    position: absolute;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
