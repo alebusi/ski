@@ -27,7 +27,7 @@ function randomIntFromInterval(min,max) {
 
 // Disegna pista
 var arrayDiv = new Array();
-    for(var i=0; i <= 20; i++){
+    for(var i=0; i < 20; i++){
         arrayDiv[i] = document.createElement('div');
         //arrayDiv[i].id = 'block' + i;
         arrayDiv[i].className = 'gigante';
@@ -72,9 +72,9 @@ function drawPista() {
       document.getElementById("velocita").innerHTML = "pistaY: "+Math.round(spostamento)+" pistaX: "+Math.round(deg/3);
       //alert("pistaY: "+pistaY+" pistaX: "+pistaX);
       //w.document.writeln("pistaX:"+px);
-      if (Math.abs(pistaY) > 8400) {
+      if (Math.abs(pistaY) >= 8000) {
         //pistaX = 0;
-        pistaY = 400;      
+        pistaY = 0;      
       }
 }
 
